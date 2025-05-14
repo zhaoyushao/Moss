@@ -47,48 +47,49 @@
   <ItemGroup>
      <Compile Include="Assets\Script\MossScript\Wizard.cs" />
      <Compile Include="Assets\Script\ConsoleToScreen.cs" />
+     <Compile Include="Assets\Script\AutoLuaPanel.cs" />
      <Compile Include="Assets\Script\LoadDll.cs" />
      <Compile Include="Assets\HybridCLRGenerate\AOTGenericReferences.cs" />
      <Folder Include="Assets" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\PlantJump" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 8 Poison" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard\2BlueWizardWalk" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 5" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard" />
-     <Folder Include="Assets\MossAsset\Slimes" />
-     <Folder Include="Assets\MossAsset\Mossy Assets" />
-     <Folder Include="Assets\MossAsset\Plant Animations" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\PlantJump" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 8 Poison" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardWalk" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 5" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard" />
+     <Folder Include="Assets\MossSprite\Slimes" />
+     <Folder Include="Assets\MossSprite\Mossy Assets" />
+     <Folder Include="Assets\MossSprite\Plant Animations" />
      <Folder Include="Assets\HybridCLRGenerate" />
-     <Folder Include="Assets\MossAsset\Mossy Assets\Mossy Tileset" />
+     <Folder Include="Assets\MossSprite\Mossy Assets\Mossy Tileset" />
      <None Include="Assets\HybridCLRGenerate\link.xml" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard\2BlueWizardJump\Dash3" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard\2BlueWizardJump" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardJump\Dash3" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardJump" />
      <Folder Include="Assets\MyAsset\Codes" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 2" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 2" />
      <Folder Include="Assets\MyAsset" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 1" />
-     <Folder Include="Assets\MossAsset\Slimes\SlimeGreen" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 6" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard\2BlueWizardJump\Dash2" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard\2BlueWizardIdle" />
-     <Folder Include="Assets\MossAsset\Slimes\SlimeOrange" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\BlueFlower2" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant Wind 1" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 1" />
+     <Folder Include="Assets\MossSprite\Slimes\SlimeGreen" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 6" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardJump\Dash2" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardIdle" />
+     <Folder Include="Assets\MossSprite\Slimes\SlimeOrange" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\BlueFlower2" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant Wind 1" />
      <Folder Include="Assets\Script" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations\BlueWizard\2BlueWizardJump\DashEffect" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardJump\DashEffect" />
      <Folder Include="Assets\Scenes" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\PlantJump2" />
-     <Folder Include="Assets\MossAsset" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 3" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 4" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\Plant 7" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\PlantJump2" />
+     <Folder Include="Assets\MossSprite" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 3" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 4" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant 7" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations" />
      <Folder Include="Assets\MyAsset\Prefabs" />
      <Folder Include="Assets\Script\MossScript" />
-     <Folder Include="Assets\MossAsset\Plant Animations\Plant Animations\BlueFlower1" />
-     <Folder Include="Assets\MossAsset\background" />
+     <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\BlueFlower1" />
+     <Folder Include="Assets\MossSprite\background" />
      <Folder Include="Assets\Animation" />
-     <Folder Include="Assets\MossAsset\BlueWizard Animations" />
+     <Folder Include="Assets\MossSprite\BlueWizard Animations" />
      <Folder Include="Assets\Resources" />
      <Reference Include="UnityEngine">
      <HintPath>D:\App\2022.3.13f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -340,16 +341,16 @@
      <HintPath>D:\App\2022.3.13f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="dnlib">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\PackageCache\com.code-philosophy.hybridclr@528240b52b\Plugins\dnlib.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\PackageCache\com.code-philosophy.hybridclr@528240b52b\Plugins\dnlib.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="LZ4">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\PackageCache\com.code-philosophy.hybridclr@528240b52b\Plugins\LZ4.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\PackageCache\com.code-philosophy.hybridclr@528240b52b\Plugins\LZ4.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>D:\App\2022.3.13f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -742,94 +743,97 @@
      <HintPath>D:\App\2022.3.13f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
      <Reference Include="HybridCLR.Runtime">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="YooAsset">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\YooAsset.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\YooAsset.dll</HintPath>
      </Reference>
      <Reference Include="HybridCLR.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="YooAsset.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\YooAsset.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\YooAsset.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-     <HintPath>D:\Project\ZYS\Test\Turtorial\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Tilemap.Editor">
+     <HintPath>D:\Project\ZYS\Moss\Turtorial\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

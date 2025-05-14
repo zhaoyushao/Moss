@@ -25,11 +25,15 @@ public class Wizard : MonoBehaviour
 
     //按键设置
     bool jumpPress;
+    
+    //相机
+    public Camera cam;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        
     }
 
 
@@ -74,6 +78,8 @@ public class Wizard : MonoBehaviour
         {
             GetComponent<Animator>().Play("Wizard_Idel");
         }
+        
+        cam.transform.position = new Vector3(transform.position.x+speed, cam.transform.position.y, cam.transform.position.z);
     }
 
     void FixedUpdate()
