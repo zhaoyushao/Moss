@@ -49,6 +49,7 @@
      <Compile Include="Assets\Script\ConsoleToScreen.cs" />
      <Compile Include="Assets\Script\AutoLuaPanel.cs" />
      <Compile Include="Assets\Script\LoadDll.cs" />
+     <Compile Include="Assets\Script\MossScript\ParallaxBackground.cs" />
      <Compile Include="Assets\HybridCLRGenerate\AOTGenericReferences.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\PlantJump" />
@@ -58,6 +59,7 @@
      <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard" />
      <Folder Include="Assets\MossSprite\Slimes" />
      <Folder Include="Assets\MossSprite\Mossy Assets" />
+     <Folder Include="Assets\TilePatetteImage" />
      <Folder Include="Assets\MossSprite\Plant Animations" />
      <Folder Include="Assets\HybridCLRGenerate" />
      <Folder Include="Assets\MossSprite\Mossy Assets\Mossy Tileset" />
@@ -77,6 +79,7 @@
      <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\Plant Wind 1" />
      <Folder Include="Assets\Script" />
      <Folder Include="Assets\MossSprite\BlueWizard Animations\BlueWizard\2BlueWizardJump\DashEffect" />
+     <Folder Include="Assets\TilePatette" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\MossSprite\Plant Animations\Plant Animations\PlantJump2" />
      <Folder Include="Assets\MossSprite" />
