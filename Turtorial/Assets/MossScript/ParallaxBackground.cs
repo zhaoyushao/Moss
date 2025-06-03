@@ -39,6 +39,7 @@ public class ParallaxBackground : MonoBehaviour
         leftRenderer.sprite = spriteRenderer.sprite;
         leftRenderer.sortingOrder = spriteRenderer.sortingOrder;
         leftCopy.position = transform.position + Vector3.left * spriteWidth;
+        leftCopy.localScale = transform.localScale;
 
         // 创建右边的复制体
         GameObject rightObj = new GameObject(gameObject.name + "_Right");
@@ -48,6 +49,7 @@ public class ParallaxBackground : MonoBehaviour
         rightRenderer.sprite = spriteRenderer.sprite;
         rightRenderer.sortingOrder = spriteRenderer.sortingOrder;
         rightCopy.position = transform.position + Vector3.right * spriteWidth;
+        rightCopy.localScale = transform.localScale;
 
         Debug.Log($"创建背景复制体 - 宽度: {spriteWidth}");
     }
