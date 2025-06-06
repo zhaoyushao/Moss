@@ -11,8 +11,11 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private int maxJumpCount = 2;  // 最大跳跃次数
     
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckDistance = 0.1f;  // 地面检测距离
+    [SerializeField] private int groundCheckRays = 3;  // 地面检测射线数量
 
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
@@ -26,7 +29,8 @@ public class PlayerController : MonoBehaviour
     
     [Header("状态")]
     public bool isOnGround;
-    int jumpCount = 1;  // 设置初始跳跃次数
+    private int jumpCount;  // 当前跳跃次数
+    private bool wasOnGround;  // 上一帧是否在地面上
 
     // 动画参数名称
     private static readonly string IS_RUNNING = "isRunning";
@@ -47,6 +51,16 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("请设置Ground Layer！在Project Settings中设置Layer 8为Ground，并在此处选择。");
         }
+
+        // 检查碰撞器
+        if (coll == null)
+        {
+            coll = GetComponent<Collider2D>();
+            if (coll == null)
+            {
+                Debug.LogError("Player缺少Collider2D组件！");
+            }
+        }
     }
 
     private void Start()
@@ -63,7 +77,7 @@ public class PlayerController : MonoBehaviour
         FixTilemapPosition();
 
         // 初始化跳跃次数
-        jumpCount = 1;
+        jumpCount = maxJumpCount;
     }
 
     private void FixTilemapPosition()
@@ -108,25 +122,17 @@ public class PlayerController : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
 
         //跳跃
-        if (Input.GetKeyDown(KeyCode.W))  // 移除jumpCount > 0检查，因为在地面检测中处理
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            jumpPress = true;
-            
             //在地面上跳跃
-            if (jumpPress && isOnGround)
+            if (isOnGround)
             {
-                GetComponent<Animator>().Play("Wizard_Jump");
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                jumpCount--;
-                jumpPress = false;
+                Jump();
             }
             //在空中跳跃
-            else if (jumpPress && jumpCount > 0 && !isOnGround)
+            else if (jumpCount > 0)
             {
-                GetComponent<Animator>().Play("Wizard_Jump");
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                jumpCount--;
-                jumpPress = false;
+                Jump();
             }
         }
 
@@ -202,22 +208,105 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        // 检测是否在地面上
         isOnGroundCheck();
     }
     
     void isOnGroundCheck()
     {
-        //判断角色碰撞器与地面图层发生接触
-        if (coll.IsTouchingLayers(groundLayer))
+        wasOnGround = isOnGround;  // 保存上一帧的地面状态
+
+        if (coll == null)
         {
-            isOnGround = true;
-            jumpCount = 1;  // 在地面上时重置跳跃次数
+            Debug.LogError("Collider is null!");
+            return;
         }
-        else
+
+        // 获取碰撞器的底部中心点和宽度
+        Bounds bounds = coll.bounds;
+        float colliderWidth = bounds.size.x;
+        float colliderHeight = bounds.size.y;
+        
+        // 计算射线起点（从碰撞器底部中心开始）
+        Vector2 colliderBottom = new Vector2(
+            bounds.center.x,
+            bounds.min.y
+        );
+
+        // 计算射线起点
+        float raySpacing = colliderWidth / (groundCheckRays - 1);
+        bool hitGround = false;
+
+        // 发射多条射线
+        for (int i = 0; i < groundCheckRays; i++)
         {
-            isOnGround = false;
+            Vector2 rayStart = new Vector2(
+                colliderBottom.x - colliderWidth/2 + (raySpacing * i),
+                colliderBottom.y
+            );
+
+            // 添加调试信息
+            if (showDebugInfo)
+            {
+                Debug.Log($"Ray {i} start position: {rayStart}, Ground Layer: {groundLayer.value}");
+            }
+
+            RaycastHit2D hit = Physics2D.Raycast(
+                rayStart,
+                Vector2.down,
+                groundCheckDistance,
+                groundLayer
+            );
+
+            if (hit.collider != null)
+            {
+                hitGround = true;
+                if (showDebugInfo)
+                {
+                    Debug.Log($"Ray {i} hit: {hit.collider.gameObject.name} at distance {hit.distance}");
+                }
+                break;
+            }
+
+            // 调试信息
+            if (showDebugInfo)
+            {
+                Debug.DrawRay(
+                    rayStart,
+                    Vector2.down * groundCheckDistance,
+                    hit.collider != null ? Color.green : Color.red,
+                    0.1f
+                );
+            }
+        }
+
+        // 更新地面状态
+        isOnGround = hitGround;
+
+        // 如果刚落地，重置跳跃次数
+        if (isOnGround && !wasOnGround)
+        {
+            jumpCount = maxJumpCount;
+            //Debug.Log("Landed! Jump count reset to: " + jumpCount);
+        }
+
+        // 调试信息
+        if (showDebugInfo)
+        {
+            Debug.Log($"Ground Check - isOnGround: {isOnGround}, Jump Count: {jumpCount}, Position: {transform.position}, Bounds: {bounds}");
+        }
+    }
+
+    private void Jump()
+    {
+        if (jumpCount > 0)
+        {
+            GetComponent<Animator>().Play("Wizard_Jump");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpCount--;
+            //Debug.Log($"Jump! Remaining jumps: {jumpCount}");
         }
     }
 } 

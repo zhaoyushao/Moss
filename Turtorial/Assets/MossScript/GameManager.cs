@@ -9,13 +9,18 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private Text scoreText;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private CollectibleUI collectibleUI;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject victoryMenu;
 
     [Header("Game Settings")]
     [SerializeField] private int startingLives = 3;
+    [SerializeField] private int totalCollectibles = 5; // 第一关的收集物总数
 
     private int currentScore = 0;
     private int currentLives;
     private bool isGameOver = false;
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -33,6 +38,27 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InitializeGame();
+        if (collectibleUI != null)
+        {
+            collectibleUI.SetTotal(totalCollectibles);
+            collectibleUI.SetCurrent(0);
+        }
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+        if (pauseMenu) pauseMenu.SetActive(false);
+        if (victoryMenu) victoryMenu.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isGameOver)
+        {
+            TogglePause();
+        }
     }
 
     public void InitializeGame()
@@ -77,7 +103,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         isGameOver = true;
         if (gameOverPanel != null)
@@ -86,10 +112,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Victory()
+    {
+        isGameOver = true;
+        if (victoryMenu) victoryMenu.SetActive(true);
+    }
+
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         InitializeGame();
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            LoadMainMenu();
+        }
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0); // 假设主菜单是场景索引0
     }
 
     public void QuitGame()
@@ -122,5 +180,12 @@ public class GameManager : MonoBehaviour
         {
             Checkpoint.LoadLastCheckpoint();
         }
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+        Time.timeScale = isPaused ? 0f : 1f;
+        if (pauseMenu) pauseMenu.SetActive(isPaused);
     }
 } 

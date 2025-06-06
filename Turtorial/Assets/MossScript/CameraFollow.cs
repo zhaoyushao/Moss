@@ -35,13 +35,13 @@ public class CameraFollow : MonoBehaviour
             initialPosition.y = transform.position.y;
             initialPosition.z = transform.position.z;
             transform.position = initialPosition;
-            if (showDebugInfo)
+            /*if (showDebugInfo)
             {
                 Debug.Log($"相机初始化:\n" +
                     $"目标: {target.name}\n" +
                     $"目标位置: {target.position}\n" +
                     $"相机位置: {transform.position}");
-            }
+            }*/
         }
         else
         {

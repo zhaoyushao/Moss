@@ -2,42 +2,68 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    [SerializeField] private int scoreValue = 1;
-    [SerializeField] private float rotateSpeed = 100f;
+    [Header("Collectible Settings")]
+    [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float floatAmplitude = 0.5f;
     [SerializeField] private float floatFrequency = 1f;
+    [SerializeField] private GameObject collectEffect;
 
     private Vector3 startPosition;
-    private float floatTimer;
+    private LevelGoal levelGoal;
+    private CollectibleUI collectibleUI;
 
     private void Start()
     {
         startPosition = transform.position;
+        levelGoal = FindObjectOfType<LevelGoal>();
+        collectibleUI = FindObjectOfType<CollectibleUI>();
     }
 
     private void Update()
     {
         // 旋转效果
-        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
         // 上下浮动效果
-        floatTimer += Time.deltaTime;
-        float newY = startPosition.y + Mathf.Sin(floatTimer * floatFrequency) * floatAmplitude;
+        float newY = startPosition.y + Mathf.Sin(Time.time * floatFrequency) * floatAmplitude;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // 通知游戏管理器增加分数
-            GameManager.Instance.AddScore(scoreValue);
-            
-            // 播放收集动画或特效（如果有的话）
-            // TODO: 在这里添加粒子效果或动画
-
-            // 销毁物品
-            Destroy(gameObject);
+            Collect();
         }
+    }
+
+    private void Collect()
+    {
+        // 播放收集音效
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.Play("Collect");
+        }
+
+        // 通知关卡目标
+        if (levelGoal != null)
+        {
+            levelGoal.AddCollectible();
+        }
+
+        // 通知UI更新
+        if (collectibleUI != null)
+        {
+            collectibleUI.AddOne();
+        }
+
+        // 播放收集效果
+        if (collectEffect != null)
+        {
+            Instantiate(collectEffect, transform.position, Quaternion.identity);
+        }
+
+        // 销毁收集物
+        Destroy(gameObject);
     }
 } 

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c753b6349bcd8004f9e653a108080079, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  levelName: "苔藓之旅 - 开始"
+  sceneName: Level1
+  levelPreview: {fileID: 0}
+  levelDescription: "欢迎来到苔藓世界！在这个教程关卡中，你将学习基本的移动和跳跃技巧。收集所有的苔藓碎片来解锁二段跳能力！"
+  playerSpawnPoint: {fileID: 0}
+  levelObjects: []
+  timeLimit: 0
+  requiredCollectibles: 5
+  isTutorialLevel: 1
+  isUnlocked: 1
+  starsRequiredToUnlock: 0
+  maxStars: 3
+  coinsReward: 100
+  availableUpgrades: []
+  unlockableItems: []
+  backgroundMusic: {fileID: 0}
+  victoryMusic: {fileID: 0}
+  defeatMusic: {fileID: 0}
+  ambientSounds: []
+  levelParticles: {fileID: 0}
+  ambientColor: {r: 0.8, g: 0.9, b: 0.7, a: 1}
+  fogDensity: 0.01
+  useParallax: 1
+  parallaxStrength: 0.3
+  hasTimeChallenge: 0
+  timeChallengeGoal: 0
+  hasCollectibleChallenge: 1
+  collectibleChallengeGoal: 5
+  hasHiddenArea: 0
+  hiddenAreaLocations: []
+  levelTips:
+  - "使用方向键或A/D键移动"
+  - "按空格键跳跃"
+  - "收集苔藓碎片来解锁新能力"
+  - "小心不要掉落到平台下方"
+  - "尝试找到所有隐藏的收集物"

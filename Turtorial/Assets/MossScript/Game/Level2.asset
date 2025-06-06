@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c753b6349bcd8004f9e653a108080079, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  levelName: "苔藓之旅 - 墙壁跳跃"
+  sceneName: Level2
+  levelPreview: {fileID: 0}
+  levelDescription: "在这个关卡中，你将学习使用墙壁跳跃来探索更高的区域。利用墙壁滑行和跳跃来收集所有的苔藓碎片！"
+  playerSpawnPoint: {fileID: 0}
+  levelObjects: []
+  timeLimit: 0
+  requiredCollectibles: 8
+  isTutorialLevel: 0
+  isUnlocked: 0
+  starsRequiredToUnlock: 2
+  maxStars: 3
+  coinsReward: 200
+  availableUpgrades: []
+  unlockableItems: []
+  backgroundMusic: {fileID: 0}
+  victoryMusic: {fileID: 0}
+  defeatMusic: {fileID: 0}
+  ambientSounds: []
+  levelParticles: {fileID: 0}
+  ambientColor: {r: 0.7, g: 0.8, b: 0.9, a: 1}
+  fogDensity: 0.02
+  useParallax: 1
+  parallaxStrength: 0.4
+  hasTimeChallenge: 0
+  timeChallengeGoal: 0
+  hasCollectibleChallenge: 1
+  collectibleChallengeGoal: 8
+  hasHiddenArea: 1
+  hiddenAreaLocations: []
+  levelTips:
+  - "靠近墙壁时按住方向键可以滑行"
+  - "在滑行时按跳跃键可以进行墙壁跳跃"
+  - "利用墙壁跳跃到达更高的平台"
+  - "有些收集物需要多次墙壁跳跃才能到达"
+  - "注意观察墙壁上的苔藓，它们可能暗示着隐藏区域" 

@@ -7,7 +7,7 @@ public class Boot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowStartPanel();
+        ShowMainMenuPanel();
     }
 
     // Update is called once per frame
@@ -15,11 +15,14 @@ public class Boot : MonoBehaviour
     {
         
     }
+    
+    public void ShowMainMenuPanel()
+    {
+        var panel = UIMgr.Instance.ShowUIView("MainMenuPanel");
+    }
 
-
-    public void ShowStartPanel()
+    public void ShowLevelOnePanel()
     {
         var panel = UIMgr.Instance.ShowUIView("MossPanel");
-        
     }
 }

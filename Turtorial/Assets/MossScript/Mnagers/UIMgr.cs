@@ -49,7 +49,7 @@ public class UIMgr : UnitySingleton<UIMgr>
     public override void Awake() {
         base.Awake();
 
-        //this.canvas = GameObject.Find("Canvas").transform;
+        this.canvas = GameObject.Find("Boot").transform;
     }
 
     

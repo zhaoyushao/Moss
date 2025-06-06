@@ -17,7 +17,7 @@ public class ResMgr : UnitySingleton<ResMgr> {
         if(true)
         {
             string path = "Assets/" + name;
-            Debug.Log(path);
+            //Debug.Log(path);
             // string path = AssetBundleUtility.PackagePathToAssetsPath(name);
             // Debug.Log(path);
             UnityEngine.Object target = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(path);

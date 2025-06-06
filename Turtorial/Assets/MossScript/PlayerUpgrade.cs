@@ -33,6 +33,7 @@ public class PlayerUpgrade : MonoBehaviour
 
     private PlayerController playerController;
     private Rigidbody2D rb;
+    private EnergySystem energySystem;
     private bool canDoubleJump = false;
     private bool canDash = true;
     private bool isDashing = false;
@@ -45,6 +46,12 @@ public class PlayerUpgrade : MonoBehaviour
     {
         playerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+        energySystem = GetComponent<EnergySystem>();
+        
+        if (energySystem == null)
+        {
+            Debug.LogError("EnergySystem component not found on player!");
+        }
     }
 
     private void Update()
@@ -77,36 +84,51 @@ public class PlayerUpgrade : MonoBehaviour
         // 二段跳
         if (doubleJump.isUnlocked && Input.GetButtonDown("Jump") && !playerController.isOnGround && canDoubleJump)
         {
-            PerformDoubleJump();
+            if (energySystem.HasEnoughEnergy(energySystem.GetDoubleJumpCost()))
+            {
+                PerformDoubleJump();
+            }
         }
 
         // 冲刺
         if (dashAbility.isUnlocked && Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
-            StartDash();
+            if (energySystem.HasEnoughEnergy(energySystem.GetDashCost()))
+            {
+                StartDash();
+            }
         }
 
         // 墙壁跳跃
         if (wallJump.isUnlocked && isWallSliding && Input.GetButtonDown("Jump"))
         {
-            PerformWallJump();
+            if (energySystem.HasEnoughEnergy(energySystem.GetWallJumpCost()))
+            {
+                PerformWallJump();
+            }
         }
     }
 
     private void PerformDoubleJump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
-        canDoubleJump = false;
-        AudioManager.Instance.Play("DoubleJump");
+        if (energySystem.UseEnergy(energySystem.GetDoubleJumpCost()))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
+            canDoubleJump = false;
+            AudioManager.Instance.Play("DoubleJump");
+        }
     }
 
     private void StartDash()
     {
-        isDashing = true;
-        canDash = false;
-        dashTimeLeft = dashDuration;
-        dashCooldownTimer = dashCooldown;
-        AudioManager.Instance.Play("Dash");
+        if (energySystem.UseEnergy(energySystem.GetDashCost()))
+        {
+            isDashing = true;
+            canDash = false;
+            dashTimeLeft = dashDuration;
+            dashCooldownTimer = dashCooldown;
+            AudioManager.Instance.Play("Dash");
+        }
     }
 
     private void HandleDash()
@@ -140,9 +162,12 @@ public class PlayerUpgrade : MonoBehaviour
 
     private void PerformWallJump()
     {
-        rb.velocity = new Vector2(-facingDirection * wallJumpForce, wallJumpForce);
-        isWallSliding = false;
-        AudioManager.Instance.Play("WallJump");
+        if (energySystem.UseEnergy(energySystem.GetWallJumpCost()))
+        {
+            // 向墙壁反方向跳跃
+            rb.velocity = new Vector2(-facingDirection * wallJumpForce * 0.5f, wallJumpForce);
+            AudioManager.Instance.Play("WallJump");
+        }
     }
 
     public void UnlockAbility(string abilityName)

@@ -51,7 +51,7 @@ public class ParallaxBackground : MonoBehaviour
         rightCopy.position = transform.position + Vector3.right * spriteWidth;
         rightCopy.localScale = transform.localScale;
 
-        Debug.Log($"创建背景复制体 - 宽度: {spriteWidth}");
+        //Debug.Log($"创建背景复制体 - 宽度: {spriteWidth}");
     }
 
     // Update is called once per frame
